@@ -2,13 +2,13 @@
 #include <stdbool.h>
 
 //Variables
-char filename = "InventoryList.csv";
+char *filename = "InventoryList.csv";
 int num;
-struct inv_items(){
-    char *Items[];
+struct inv_items{
+    char items[30];
     int price;
     int numOfItems;
-}
+};
 
 void check_in(const char *filename){
     FILE *fptr;
@@ -33,6 +33,8 @@ void check_in(const char *filename){
 }
 
 int main(){
-    printf("Hello, welcome to the Inventory System. This program can be used for anything you wish to catalog.")
-    printf("Before we get started, ")
+    printf("Hello, welcome to the Inventory System. This program can be used for anything you wish to catalog./n");
+    printf("Before we get started, do you have a file?/n");
+    check_in(filename);
+    return 0;
 }
