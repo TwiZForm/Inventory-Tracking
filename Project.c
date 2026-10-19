@@ -33,8 +33,8 @@ void check_in(const char *filename){
 }
 
 int main(){
-    printf("Hello, welcome to the Inventory System. This program can be used for anything you wish to catalog./n");
-    printf("Before we get started, do you have a file?/n");
+    printf("Hello, welcome to the Inventory System. This program can be used for anything you wish to catalog.\n");
+    printf("Before we get started, do you have a file?\n");
     check_in(filename);
     return 0;
 }
