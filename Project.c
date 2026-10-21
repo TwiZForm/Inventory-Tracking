@@ -4,14 +4,22 @@
 //Variables
 char *filename = "InventoryList.csv";
 int num;
+struct date{
+    int day;
+    int month;
+}
 struct inv_items{
-    char items[30];
+    int id;
+    char name[20];
     int price;
-    int numOfItems;
+    int quantity;
+    struct date;
 };
 
+struct inv_items item[20];
+
 void check_in(const char *filename){
-    FILE *fptr;
+    FILE *fptr = fopen(filename, "w");
     
     if (fptr == NULL){
         printf("File not detected. Would you like to name your inventory? Enter 1 for yes or 2 for no: \n");
@@ -23,8 +31,6 @@ void check_in(const char *filename){
             case 2:
                 printf("Very well. The default name is 'Inventory List.csv'.");
         }
-        
-        fptr = fopen(filename, "w");
         fprintf(fptr, "Product Name, Number of Items, Price");
     } else{
         printf("File detected.");
